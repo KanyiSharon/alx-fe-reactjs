@@ -7,16 +7,19 @@ import Counter from "./components/Counter";
 import userContext from "../../alx-react-app-props/src/components/UserContext";
 
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState({
+    name: "John Doe",
+    age: 30,
+    email: "john.doe@example.com",
+  });
 
   return (
     <>
-      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+    <userContext.Provider value={userData}/>
+      <UserProfile />
       <MainContent />
       <Footer />
       <WelcomeMessage />
