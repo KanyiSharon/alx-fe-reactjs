@@ -3,9 +3,24 @@ import {useState} from 'react';
     const[count,setCount]=useState(0);
     return (
       <div>
-        <button onClick={()=>setCount(count+1)}>Increment</button>
-        <button onClick={function(){setCount(count-1)}}>Decrement</button>
-        <button onClick={function(){setCount(0)}}>Reset</button>
+        <h3>
+            Counter:{count}
+        </h3>
+        <button onClick={() => setCount(count + 1)}>Increment</button><br></br>
+        <button
+          onClick={function () {
+            setCount(count - 1);
+          }}
+        >
+          Decrement
+        </button><br></br>
+        <button
+          onClick={function () {
+            setCount(0);
+          }}
+        >
+          Reset
+        </button>
       </div>
     );
  }
