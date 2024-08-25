@@ -7,9 +7,9 @@ function App() {
   return <ProfilePage userData={userData} />;
 }
 return (
-  <userContext.Provider value={userData}>
+  <UserContext.Provider value={userData}>
     <ProfilePage />
-  </userContext.Provider>
+  </UserContext.Provider>
 )
 
 export default App;
