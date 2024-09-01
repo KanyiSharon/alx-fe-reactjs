@@ -1,6 +1,7 @@
-import { useRecipeStore } from "recipe-sharing-appsrcstore\recipeStore.js";
+import useRecipeStore from "../store/recipeStore";
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
+
   return (
     <div>
       {recipes.map((recipe) => (
