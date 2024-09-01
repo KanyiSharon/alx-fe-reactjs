@@ -4,6 +4,10 @@ import create from "zustand";
 const useRecipeStore = create((set) => ({
   recipes: [],
   favorites: [],
+  searchTerm: "", // State to store the search term
+
+  // Action to set the search term
+  setSearchTerm: (term) => set({ searchTerm: term }),
 
   // Action to add a recipe to favorites
   addFavorite: (recipeId) =>
