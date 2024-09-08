@@ -12,6 +12,7 @@ function ProtectedRoute({ children }) {
 // Example components for routes
 const Home = () => <h1>Home Page</h1>;
 const Dashboard = () => <h1>Dashboard - Protected</h1>;
+const Profile = () => <h1>User Profile</h1>; // New Profile component
 
 // BlogPost component to display individual blog posts
 const BlogPost = () => {
@@ -34,6 +35,16 @@ function App() {
                             <Dashboard />
                         </ProtectedRoute>
                     }
+                />
+
+                {/* Profile Route */}
+                <Route 
+                    path="/profile" 
+                    element={
+                        <ProtectedRoute>
+                            <Profile /> {/* Protected Profile Route */}
+                        </ProtectedRoute>
+                    } 
                 />
 
                 {/* Dynamic Blog Post Route */}
