@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import formikForm from "form-handling-react/src/components/formikForm.js"; // Import the form component
 function App() {
   const [count, setCount] = useState(0)
 
