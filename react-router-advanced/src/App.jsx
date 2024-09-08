@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; // Assuming useAuth provides authentication status
 
 // ProtectedRoute component
@@ -12,6 +12,12 @@ function ProtectedRoute({ children }) {
 // Example components for routes
 const Home = () => <h1>Home Page</h1>;
 const Dashboard = () => <h1>Dashboard - Protected</h1>;
+
+// BlogPost component to display individual blog posts
+const BlogPost = () => {
+    const { id } = useParams(); // Access the URL parameter
+    return <h1>Blog Post {id}</h1>;
+};
 
 function App() {
     return (
@@ -29,6 +35,9 @@ function App() {
                         </ProtectedRoute>
                     }
                 />
+
+                {/* Dynamic Blog Post Route */}
+                <Route path="/blog/:id" element={<BlogPost />} /> {/* Route for BlogPost */}
             </Routes>
         </BrowserRouter>
     );
